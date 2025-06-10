@@ -26,7 +26,9 @@ share/python-wheels/
 *.egg
 MANIFEST
 logs/
-test_beds/
+rllab/
+.vscode/
+
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
