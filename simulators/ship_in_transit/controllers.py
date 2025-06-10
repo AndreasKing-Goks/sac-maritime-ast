@@ -6,7 +6,7 @@ This module provides classes of controllers used to control the ship inside the 
 import numpy as np
 from typing import List, NamedTuple, Union
 
-from simulator.ship_in_transit.LOS_guidance import NavigationSystem 
+from simulators.ship_in_transit.LOS_guidance import NavigationSystem 
 
 ###################################################################################################################
 #################################### CONFIGURATION FOR PID CONTROLLER #############################################

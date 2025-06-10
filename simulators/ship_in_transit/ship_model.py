@@ -10,8 +10,8 @@ import copy
 from collections import defaultdict
 from typing import NamedTuple, List
 
-from simulator.ship_in_transit.utils import EulerInt, ShipDraw
-from simulator.ship_in_transit.ship_engine import ShipMachineryModel, MachinerySystemConfiguration
+from simulators.ship_in_transit.utils import EulerInt, ShipDraw
+from simulators.ship_in_transit.ship_engine import ShipMachineryModel, MachinerySystemConfiguration
 
 ###################################################################################################################
 ####################################### CONFIGURATION FOR SHIP MODEL ##############################################

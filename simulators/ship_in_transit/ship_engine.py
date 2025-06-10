@@ -7,7 +7,7 @@ Ship machinery includes the type of engine and diesel generators used.
 import numpy as np
 from typing import List, NamedTuple, Union
 
-from simulator.ship_in_transit.utils import EulerInt
+from simulators.ship_in_transit.utils import EulerInt
 
 ###################################################################################################################
 ###################################### CONFIGURATION FOR MACHINERY MODEL ##########################################
