@@ -4,7 +4,7 @@ from rllab.core.serializable import Serializable
 from sandbox.rocky.tf.core.parameterized import Parameterized
 from ast_core.utils import tf_utils
 
-WEIGHT_DEFAULT_NAME = "wegihts"
+WEIGHT_DEFAULT_NAME = "weights"
 BIAS_DEFAULT_NAME = "bias"
 
 def _weight_variable(

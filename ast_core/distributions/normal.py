@@ -31,7 +31,7 @@ class Normal(object):
         self._create_placeholders()
         self._create_graph()
         
-    def _create_palceholders(self):
+    def _create_placeholders(self):
         self._N_pl = tf.placeholder(
             tf.int32,
             shape=(),
