@@ -11,15 +11,15 @@ Repository for **Soft Actor-Critic Adaptive Stress Testing (SAC-AST)** framework
 Before installation, ensure compatibility between **TensorFlow**, **CUDA**, and **cuDNN**:
 
 - [TensorFlow GPU compatibility guide](https://www.tensorflow.org/install/source#gpu)
-- [Windows native pip install instructions](https://www.tensorflow.org/install/pip#windows-native)
+- [Windows native pip install instructions](https://www.tensorflow.org/install/pip#windows-wsl2)
 
-> **Note:** This project runs on a local Windows-native machine.
+> **Note:** This project runs on a local Windows-WSL2 machine.
 
 ### TensorFlow Dependencies
 
-All required packages are listed in [`sac-test-gpu.yml`](sac-test-gpu.yml).
+~~All required packages are listed in [`sac-test-gpu.yml`](sac-test-gpu.yml).~~
 
-- Downgrade `numpy` to **<2.0** due to known compatibility issues with TensorFlow.
+- ~~Downgrade `numpy` to **<2.0** due to known compatibility issues with TensorFlow.~~
 
 To verify `tensorflow` with GPU support installation:
 
