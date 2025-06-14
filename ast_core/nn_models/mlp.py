@@ -1,4 +1,7 @@
-import tensorflow as tf
+# Disable VS Code IntelliSense Warning in settings.json
+# Enable Tensorflow 1.x, in Tensorflow 2.x runtime
+import tensorflow.compat.v1 as tf 
+tf.disable_v2_behavior()
 
 from rllab.core.serializable import Serializable
 from sandbox.rocky.tf.core.parameterized import Parameterized
@@ -20,7 +23,8 @@ def _weight_variable(
     -param shape        : Variable shape.
     """
     if initializer is None:
-        initializer = tf.contrib.layes.xavier_initializer()
+        # initializer = tf.contrib.layes.xavier_initializer() # Deprecated version
+        initializer = tf.keras.initializers.GlorotUniform()
         
     var = tf.get_variable(name, shape, initializer=initializer)
     return var
@@ -84,7 +88,7 @@ def affine(
         b = _bias_variable((units,),
                            initializer=b_initializer,
                            name=bias_name)
-        outpu += b
+        output += b
     
     return output
 
@@ -118,13 +122,12 @@ def mlp(inputs,
         layer = _bias_variable(layer_sizes[0], b_initializer)
         for i, inp in enumerate(inputs):
             with tf.variable_scope('input' + str(i)):
-                layer += affine(
-                    inp=inp,
-                    units=layer_sizes[0],
-                    bias=False,
-                    W_initializer=W_initializer,
-                    b_initializer=b_initializer
-                )
+                layer = layer + affine(inp=inp, 
+                                       units=layer_sizes[0], 
+                                       bias=False, 
+                                       W_initializer=W_initializer, 
+                                       b_initializer=b_initializer
+                                       )
     
         layer = nonlinearity(layer)
         
