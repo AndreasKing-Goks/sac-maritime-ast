@@ -2,7 +2,10 @@
 Multivariate normal distribution with mean and standard deviation outputted by a neural network
 """
 
-import tensorflow as tf
+import tensorflow.compat.v1 as tf 
+tf.disable_v2_behavior()
+import tensorflow_probability as tfp
+
 import numpy as np
 
 from ast_core.nn_models.mlp import mlp
@@ -32,6 +35,13 @@ class Normal(object):
         self._create_graph()
         
     def _create_placeholders(self):
+        '''
+        Defines input slots to a computation graphs that will be provided later
+        at runtime, not during graph construction.
+        
+        Actual data is not fed when defining the model. Data is fed at runtime using
+        `feed_dict` during TF session
+        '''
         self._N_pl = tf.placeholder(
             tf.int32,
             shape=(),
@@ -78,8 +88,8 @@ class Normal(object):
         
         ## Construct the normal distribution
         # Tensorflow's multivariate normal distribution supports reparameterization
-        ds = tf.contrib.distributions
-        dist = ds.MultivariateNormalDiag(loc=self._mu_t, scale_diag=tf.exp(self._log_sig_t))
+        tfd = tfp.distributions
+        dist = tfd.Normal(loc=self._mu_t, scale=tf.exp(self._log_sig_t))
         # Sample from the distribution
         x_t = dist.sample()
         if not self._reparameterize:
@@ -110,6 +120,7 @@ class Normal(object):
     @property
     def log_sig_t(self):
         return self._log_sig_t
+    
     @property
     def log_pi_t(self):
         return self._log_pi_t
