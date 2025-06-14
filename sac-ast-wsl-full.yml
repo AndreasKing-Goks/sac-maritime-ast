@@ -36,8 +36,12 @@ dependencies:
   - pip:
       - absl-py==2.3.0
       - astunparse==1.6.3
+      - attrs==25.3.0
       - certifi==2025.4.26
       - charset-normalizer==3.4.2
+      - cloudpickle==3.1.1
+      - decorator==5.2.1
+      - dm-tree==0.1.9
       - flatbuffers==25.2.10
       - gast==0.6.0
       - google-pasta==0.2.0
@@ -77,6 +81,7 @@ dependencies:
       - tensorboard-data-server==0.7.2
       - tensorflow==2.19.0
       - tensorflow-io-gcs-filesystem==0.37.1
+      - tensorflow-probability==0.25.0
       - termcolor==3.1.0
       - typing-extensions==4.14.0
       - urllib3==2.4.0
