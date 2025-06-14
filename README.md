@@ -13,7 +13,7 @@ Before installation, ensure compatibility between **TensorFlow**, **CUDA**, and 
 - [TensorFlow GPU compatibility guide](https://www.tensorflow.org/install/source#gpu)
 - [Windows native pip install instructions](https://www.tensorflow.org/install/pip#windows-wsl2)
 
-> **Note:** This project runs on a local Windows-WSL2 machine.
+> **Note:** This project runs on a local Windows-`WSL2` machine.
 
 ### TensorFlow Dependencies
 
@@ -34,13 +34,25 @@ To run the SAC implementation, install the `rllab` dependency from Haarnoja’s 
 
 ---
 
-### For Windows PowerShell
+### Updating PYTHONPATH (IMPORTANT!)
 
-Add the `rllab` directory to your `PYTHONPATH`:
+To ensure Python can import both `sac-maritime-ast` codebase and the internal `rllab` module, update the `PYTHONPATH` inside the `~/.bashrc` of the `WSL2` bash terminal.
 
-```powershell
-$env:PYTHONPATH = (Get-Location).Path + ";" + $env:PYTHONPATH
+First open the `~/.bashrc` file.
+```bash
+nano ~/.bashrc
 ```
+
+Make sure you are in the project root, then add this line at the end of the file.
+```bash
+export PYTHONPATH="$(pwd):$(pwd)/rllab:$PYTHONPATH"
+```
+
+Save the file. Then source the file.
+```bash
+source ~/.bashrc
+```
+
 
 ### For Visual Studio Code Users
 
