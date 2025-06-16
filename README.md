@@ -1,5 +1,13 @@
 # SAC-Maritime-AST
 
+> ⚠️ **Project Deprecated / Unmaintained**
+>
+> This repository is no longer maintained as we plan to redesign the entire architecture from scratch.  
+> The current implementation is outdated and will be replaced by a new version in a separate repository.
+>
+> **No support or further updates will be provided in this repository.**
+
+
 Repository for **Soft Actor-Critic Adaptive Stress Testing (SAC-AST)** framework in maritime applications.
 
 ---
